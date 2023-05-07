@@ -27,7 +27,6 @@ interface ISystemFunctions {
   delete(id:number): void;
   display(): void;
   routes():Router;
-  // getWarehouseId(supervisor_id: number): Promise<number>;
 }
 
 export default ISystemFunctions;
