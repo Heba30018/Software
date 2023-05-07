@@ -3,7 +3,7 @@ import express from "express";
 import {container} from 'tsyringe';
 
 import ProductController from "./product/ProductController";
-import SupervisorController from "../supervisor/SupervisorController";
+import SupervisorController from "./supervisor/SupervisorController";
 
 const app = express();
 const bodyParser = require('body-parser');

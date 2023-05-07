@@ -1,5 +1,5 @@
-import ISystemFunctions from "../ISystemFunctions";
-import db from '../src/config/db'
+import ISystemFunctions from "../../ISystemFunctions";
+import db from '../config/db'
 import { Request, Response, Router } from "express";
 import express from "express";
 
