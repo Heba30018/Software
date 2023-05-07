@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "scripts": {
+    "start": "nodemon --exec ts-node src/index.ts"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
