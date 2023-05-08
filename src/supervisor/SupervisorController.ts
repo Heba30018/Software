@@ -81,21 +81,6 @@ import express from "express";
    
   }
 
-  routes() {
-    this.router.get("/", async (req, res) => {
-      res.status(200).json(await this.display());
-    });
-    this.router.post("/", async (req, res) => {
-      res.status(200).json(await this.add(req));
-      });
-    this.router.post("/:id", async (req, res) => {
-      res.status(200).json(await this.delete(parseInt(req.params.id)));
-      });
-    this.router.put("/:id", async (req, res) => {
-      res.status(200).json(await this.update(parseInt(req.params.id),req));
-    })
-    return this.router;
-  }
 }
 
 export default new SupervisorController();

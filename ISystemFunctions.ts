@@ -26,7 +26,6 @@ interface ISystemFunctions {
   update(id:number,req: Request):void;
   delete(id:number): void;
   display(): void;
-  routes():Router;
 }
 
 export default ISystemFunctions;
