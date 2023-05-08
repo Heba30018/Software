@@ -13,7 +13,7 @@ export default class ProductService {
         const result = await this.ProductRepository.getProduct()
         return result;
     }
-    async createProduct(req: Request){
+    async addProduct(req: Request){
          const result =await this.ProductRepository.addProduct(req)
          return result;
     }

@@ -8,14 +8,21 @@ import express from "express";
 export default class ProductController {
   ProductService: ProductService;
   router: Router;
+  name: String;
+  description: String;
+  stock :number;
+
 
   constructor(productService: ProductService) {
     this.ProductService = productService;
     this.router = Router();
     this.router.use(express.json());
+    this.name = '';
+    this.description =''
+    this.stock =0
   }
 
-  async getProductRoute() {
+  async getProduct() {
     try {
       const products = await this.ProductService.getProduct();
       return products;
@@ -24,9 +31,9 @@ export default class ProductController {
       throw error;
     }
   }
-  async createProductRoute(req: Request, res: Response) {
+  async addProduct(req: Request, res: Response) {
     try {
-      const result = await this.ProductService.createProduct(req.body);
+      const result = await this.ProductService.addProduct(req.body);
       return result;
     } catch (error) {
       console.error(`ProductController.createProduct - Error: ${error}`);
@@ -54,10 +61,10 @@ export default class ProductController {
 
   routes() {
     this.router.get("/", async (req, res) => {
-      res.status(200).json(await this.getProductRoute());
+      res.status(200).json(await this.getProduct());
     });
     this.router.post("/", async (req, res) => {
-      res.status(200).json(await this.createProductRoute(req, res));
+      res.status(200).json(await this.addProduct(req, res));
       });
     this.router.post("/:id", async (req, res) => {
       res.status(200).json(await this.deleteProduct(parseInt(req.params.id)));

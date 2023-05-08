@@ -5,9 +5,15 @@ import express from "express";
 
  class WarehouseController  implements ISystemFunctions {
   router: Router;
+  name : string;
+  locstion: string;
+  supervisor_id :number
   constructor() {
     this.router = Router();
     this.router.use(express.json());
+    this.name =''
+    this.locstion =''
+    this.supervisor_id =0
   }
   async add(req: Request){
     const arr = Object.values(req.body);
